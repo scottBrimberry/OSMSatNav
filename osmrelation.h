@@ -9,7 +9,10 @@ class OSMNode;
 class OSMWay;
 
 /**
-   
+The OSMRelation class is used to hold information about relations within an OSMMap.
+As the nodes and ways within a relation are stored only as id numbers, each 
+instance of the OSMRelation class requires an OSMMap as its parent. This parent is
+used to get pointers to the OSMNode and OSMWay objects for each member.
 */
 class OSMRelation: public OSMTaggable
 {
