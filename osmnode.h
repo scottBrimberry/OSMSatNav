@@ -56,7 +56,7 @@ class OSMNode: public OSMTaggable
     a way or relation, it will be rendered on the map as part of that way
     or relation instead of independently as a POI
     
-    @param related True is the node is related to a way or relation
+    @param related True if the node is related to a way or relation
     */
     void setRelated( bool related );
     
