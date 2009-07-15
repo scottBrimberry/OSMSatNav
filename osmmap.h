@@ -2,6 +2,7 @@
 #define OSMMAP_H
 
 #include <QList>
+#include <QPainter>
 
 #include "osmnode.h"
 #include "osmway.h"
@@ -158,6 +159,13 @@ class OSMMap
     @return A pointer to the requested OSMRelation
     */
     OSMRelation* getRelationPtrById( int id );
+    
+    /**
+    Draws the map to the provided QPainter
+    
+    @param painter The QPainter to draw the map to
+    */
+    void paint( QPainter* painter );
     
   private:
     QList<OSMNode> m_nodes;

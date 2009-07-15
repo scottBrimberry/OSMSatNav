@@ -83,3 +83,13 @@ OSMRelation* OSMMap::getRelationPtrById( int id )
   
   return 0;
 }
+
+void OSMMap::paint( QPainter* painter )
+{
+  //Ways
+  foreach( OSMWay i, ways() )
+  {
+    //TODO: The mim lat and lon need to be part of the object read from the XML file
+    i.paint( painter, 52.69855, -2.76612 );
+  }
+}

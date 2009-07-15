@@ -23,39 +23,39 @@
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include "osmtaggable.h"</span>
 <a name="l00005"></a>00005 
-<a name="l00006"></a>00006 <span class="keyword">class </span>OSMNode: <span class="keyword">public</span> OSMTaggable
-<a name="l00007"></a>00007 {
-<a name="l00008"></a>00008   <span class="keyword">public</span>:
-<a name="l00009"></a>00009     OSMNode();
-<a name="l00010"></a>00010     OSMNode( <span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">double</span> lat, <span class="keywordtype">double</span> lon, <span class="keywordtype">bool</span> visible );
-<a name="l00011"></a>00011     
-<a name="l00012"></a>00012     <span class="comment">//Setters</span>
-<a name="l00013"></a>00013     <span class="keywordtype">void</span> setId( <span class="keywordtype">int</span> <span class="keywordtype">id</span> );
-<a name="l00014"></a>00014     <span class="keywordtype">void</span> setLat( <span class="keywordtype">double</span> lat );
-<a name="l00015"></a>00015     <span class="keywordtype">void</span> setLon( <span class="keywordtype">double</span> lon );
-<a name="l00016"></a>00016     <span class="keywordtype">void</span> setVisible( <span class="keywordtype">bool</span> visible );
-<a name="l00017"></a>00017     <span class="keywordtype">void</span> setRelated( <span class="keywordtype">bool</span> related );
-<a name="l00018"></a>00018     
-<a name="l00019"></a>00019     <span class="comment">//Getters</span>
-<a name="l00020"></a>00020     <span class="keywordtype">int</span> id();
-<a name="l00021"></a>00021     <span class="keywordtype">double</span> lat();
-<a name="l00022"></a>00022     <span class="keywordtype">double</span> lon();
-<a name="l00023"></a>00023     <span class="keywordtype">bool</span> visible();
-<a name="l00024"></a>00024     <span class="keywordtype">bool</span> related();
-<a name="l00025"></a>00025     
-<a name="l00026"></a>00026   <span class="keyword">private</span>:
-<a name="l00027"></a>00027     <span class="comment">//Taken straight from XML</span>
-<a name="l00028"></a>00028     <span class="keywordtype">int</span> m_id;
-<a name="l00029"></a>00029     <span class="keywordtype">double</span> m_lat;
-<a name="l00030"></a>00030     <span class="keywordtype">double</span> m_lon;
-<a name="l00031"></a>00031     <span class="keywordtype">bool</span> m_visible;
-<a name="l00032"></a>00032     <span class="comment">//True if part of a relation (i.e. if false, then POI)</span>
-<a name="l00033"></a>00033     <span class="keywordtype">bool</span> m_related;
-<a name="l00034"></a>00034 };
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036 <span class="preprocessor">#endif</span>
+<a name="l00012"></a><a class="code" href="classOSMNode.html">00012</a> <span class="keyword">class </span><a class="code" href="classOSMNode.html">OSMNode</a>: <span class="keyword">public</span> <a class="code" href="classOSMTaggable.html">OSMTaggable</a>
+<a name="l00013"></a>00013 {
+<a name="l00014"></a>00014   <span class="keyword">public</span>:
+<a name="l00018"></a>00018     <a class="code" href="classOSMNode.html#c9811acb4fc7bc41e6b7b32f8dd4ba6e">OSMNode</a>();
+<a name="l00027"></a>00027     <a class="code" href="classOSMNode.html#c9811acb4fc7bc41e6b7b32f8dd4ba6e">OSMNode</a>( <span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">double</span> <a class="code" href="classOSMNode.html#8395b18c89c105f41bc7f0a0a6e89d41">lat</a>, <span class="keywordtype">double</span> <a class="code" href="classOSMNode.html#ccd706ba1fbd22ff4a8f2044d0e80f72">lon</a>, <span class="keywordtype">bool</span> <a class="code" href="classOSMNode.html#c2b1bb1c2b5bc5a9bd935978865532ad">visible</a> );
+<a name="l00028"></a>00028     
+<a name="l00029"></a>00029     <span class="comment">//Setters</span>
+<a name="l00035"></a>00035 <span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classOSMNode.html#468ee14354b672b24db14f94745f8090">setId</a>( <span class="keywordtype">int</span> <span class="keywordtype">id</span> );
+<a name="l00041"></a>00041     <span class="keywordtype">void</span> <a class="code" href="classOSMNode.html#dbbfdd04cc5cecf3a6d306f3ab97a8cd">setLat</a>( <span class="keywordtype">double</span> lat );
+<a name="l00047"></a>00047     <span class="keywordtype">void</span> <a class="code" href="classOSMNode.html#dd00f3deb21744092b3ba7cebbb936ef">setLon</a>( <span class="keywordtype">double</span> lon );
+<a name="l00053"></a>00053     <span class="keywordtype">void</span> <a class="code" href="classOSMNode.html#3ae7fda2f35c5c1a4f1593d06c1b24ff">setVisible</a>( <span class="keywordtype">bool</span> visible );
+<a name="l00061"></a>00061     <span class="keywordtype">void</span> <a class="code" href="classOSMNode.html#e21ae16731da846f573f52bc36eb6d13">setRelated</a>( <span class="keywordtype">bool</span> <a class="code" href="classOSMNode.html#51a357dafb6f8ff4d1c76da62c10302e">related</a> );
+<a name="l00062"></a>00062     
+<a name="l00063"></a>00063     <span class="comment">//Getters</span>
+<a name="l00069"></a>00069 <span class="comment"></span>    <span class="keywordtype">int</span> <a class="code" href="classOSMNode.html#2030f753d85b438ac387c0c49e0f89a9">id</a>();
+<a name="l00075"></a>00075     <span class="keywordtype">double</span> <a class="code" href="classOSMNode.html#8395b18c89c105f41bc7f0a0a6e89d41">lat</a>();
+<a name="l00081"></a>00081     <span class="keywordtype">double</span> <a class="code" href="classOSMNode.html#ccd706ba1fbd22ff4a8f2044d0e80f72">lon</a>();
+<a name="l00087"></a>00087     <span class="keywordtype">bool</span> <a class="code" href="classOSMNode.html#c2b1bb1c2b5bc5a9bd935978865532ad">visible</a>();
+<a name="l00093"></a>00093     <span class="keywordtype">bool</span> <a class="code" href="classOSMNode.html#51a357dafb6f8ff4d1c76da62c10302e">related</a>();
+<a name="l00094"></a>00094     
+<a name="l00095"></a>00095   <span class="keyword">private</span>:
+<a name="l00096"></a>00096     <span class="comment">//Taken straight from XML</span>
+<a name="l00097"></a>00097     <span class="keywordtype">int</span> m_id;
+<a name="l00098"></a>00098     <span class="keywordtype">double</span> m_lat;
+<a name="l00099"></a>00099     <span class="keywordtype">double</span> m_lon;
+<a name="l00100"></a>00100     <span class="keywordtype">bool</span> m_visible;
+<a name="l00101"></a>00101     <span class="comment">//True if part of a relation (i.e. if false, then POI)</span>
+<a name="l00102"></a>00102     <span class="keywordtype">bool</span> m_related;
+<a name="l00103"></a>00103 };
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jul 13 06:01:12 2009 for SatNav by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 15 02:09:53 2009 for SatNav by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

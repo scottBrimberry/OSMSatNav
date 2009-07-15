@@ -1,11 +1,30 @@
-#include <QtDebug>
+#include <QApplication>
+#include <QDebug>
 #include <QFile>
+#include <QLabel>
+#include <QPainter>
 #include <QXmlStreamReader>
 
 #include "osmmap.h"
 
 int main( int argc, char** argv )
 {
+  //BEGIN TEST
+  QApplication app( argc, argv );
+  
+  QLabel label;
+  
+  QPixmap pixmap( 500, 400 );
+  
+  QPainter painter( &pixmap );
+  
+  label.setPixmap( pixmap );
+  pixmap.fill( QColor( 227, 202, 166 ) );
+  
+  painter.setPen( QPen( QBrush( Qt::blue ), 2 ) );
+  
+  //END TEST
+  
   OSMMap map;
   
   QXmlStreamReader xml;
@@ -151,15 +170,16 @@ int main( int argc, char** argv )
     qDebug() << "Error";
   }
   
-  qDebug() << "Finished processing";
+  //BEGIN TEST
   
-  foreach( OSMRelation i, map.relations() )
-  {
-    qDebug() << "Id: " << i.id() << " Visible: " << i.visible();
-    foreach( OSMTag j, i.tags() )
-      qDebug() << "    " << j.name() << " = " << j.value();
-    foreach( OSMRelationMember j, i.members() )
-      qDebug() << "    " << j.ref();
-  }
+  map.paint( &painter );
+     
+  label.show();
+  
+  app.exec();
+  
+  return 0;
+  
+  //END TEST
   
 }

@@ -1,6 +1,8 @@
 #ifndef OSMWAY_H
 #define OSMWAY_H
 
+#include <QPainter>
+
 #include "osmtaggable.h"
 
 class OSMNode;
@@ -43,7 +45,7 @@ class OSMWay: public OSMTaggable
     @param id The numerical unique id of the way
     */
     void setId( int id );
-    /**
+    /**&
     Set whether the way is visible on the map
     
     @param visible True if the way should be visible on the map
@@ -76,6 +78,13 @@ class OSMWay: public OSMTaggable
     @return True if the way is related to a relation
     */
     bool related();
+    
+    /**
+    Paint the way using the provided QPainter
+    
+    @param painter The QPainter to use to draw the map
+    */
+    void paint( QPainter* painter, double minlat, double minlon);
     
   private:
     //Taken straight from XML

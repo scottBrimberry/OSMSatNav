@@ -26,27 +26,27 @@
 <a name="l00006"></a>00006 
 <a name="l00007"></a>00007 <span class="preprocessor">#include "osmtag.h"</span>
 <a name="l00008"></a>00008 
-<a name="l00009"></a>00009 <span class="keyword">class </span>OSMTaggable
-<a name="l00010"></a>00010 {
-<a name="l00011"></a>00011   <span class="keyword">public</span>:
-<a name="l00012"></a>00012     OSMTaggable();
-<a name="l00013"></a>00013     
-<a name="l00014"></a>00014     <span class="keywordtype">void</span> addTag( QString name, QString value );
-<a name="l00015"></a>00015     
-<a name="l00016"></a>00016     <span class="keywordtype">void</span> addTag( QXmlStreamReader &amp;xml );
-<a name="l00017"></a>00017     
-<a name="l00018"></a>00018     <span class="keywordtype">bool</span> hasTag( QString name, QString &amp;value );
-<a name="l00019"></a>00019     
-<a name="l00020"></a>00020     QList&lt;OSMTag&gt; tags();
+<a name="l00014"></a><a class="code" href="classOSMTaggable.html">00014</a> <span class="keyword">class </span><a class="code" href="classOSMTaggable.html">OSMTaggable</a>
+<a name="l00015"></a>00015 {
+<a name="l00016"></a>00016   <span class="keyword">public</span>:
+<a name="l00020"></a>00020     <a class="code" href="classOSMTaggable.html#f712cfc1e81c44c6f2088b7bb76c627c">OSMTaggable</a>();
 <a name="l00021"></a>00021     
-<a name="l00022"></a>00022   <span class="keyword">private</span>:
-<a name="l00023"></a>00023     <span class="comment">//Tags</span>
-<a name="l00024"></a>00024     QList&lt;OSMTag&gt; m_tags;
-<a name="l00025"></a>00025 };
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="preprocessor">#endif</span>
+<a name="l00028"></a>00028     <span class="keywordtype">void</span> <a class="code" href="classOSMTaggable.html#08e0b59e4e07ad7ceaf2aa2ac02b9ed2">addTag</a>( QString name, QString value );
+<a name="l00029"></a>00029     
+<a name="l00037"></a>00037     <span class="keywordtype">void</span> <a class="code" href="classOSMTaggable.html#08e0b59e4e07ad7ceaf2aa2ac02b9ed2">addTag</a>( QXmlStreamReader &amp;xml );
+<a name="l00038"></a>00038     
+<a name="l00048"></a>00048     <span class="keywordtype">bool</span> <a class="code" href="classOSMTaggable.html#616922138b2513684df5965389595c15">hasTag</a>( QString name, QString &amp;value );
+<a name="l00049"></a>00049     
+<a name="l00055"></a>00055     QList&lt;OSMTag&gt; <a class="code" href="classOSMTaggable.html#b4b7b88357fe47ef9d2c78410bb7c741">tags</a>();
+<a name="l00056"></a>00056     
+<a name="l00057"></a>00057   <span class="keyword">private</span>:
+<a name="l00058"></a>00058     <span class="comment">//Tags</span>
+<a name="l00059"></a>00059     QList&lt;OSMTag&gt; m_tags;
+<a name="l00060"></a>00060 };
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jul 13 06:01:12 2009 for SatNav by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 15 02:09:53 2009 for SatNav by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
