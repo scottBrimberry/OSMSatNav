@@ -38,38 +38,133 @@ class OSMRelation: public OSMTaggable
     @param member An OSMRelationMember object representing the member to be added.
     */
     void addMember( OSMRelationMember member );
+       
+    /**
+    Read an OSMRelationMember object from the given QXmlStreamReader object and add
+    it to the relation. The xml stream needs to be at the start of a member element. 
+    (i.e. xml.isStartElement() && xml.name() == "member")
+    
+    @param xml The QXmlStreamReader to be read from
+    */
     void addMember( QXmlStreamReader &xml );
     
+    /**
+    Return a QList containing all the members in the relation
+    
+    @return All the members in the relation
+    */
     QList<OSMRelationMember> members();
     
-    //Due to OSMNode and OSMWay being completely and utterly incompatible,
-    //i.e. there is no way of creating a useful superclass, I will have to
-    //implement two functions to retreive members, one fro each class.
-    //The calling code will have to determine the type before calling the
-    //correct function (using getType()).
+    /**
+    Returns the type of the provided member. This (or getMemberType( int ) ) should be used
+    before getMemberNode() or getMemberWay() to ensure you use the correct function to get
+    the OSMNode or OSMWay.
     
-    //Get member type
+    @param member An OSMRelationMember object, the function will return the type of this
+    object
+    
+    @return The type of the provided OSMRelationMember object
+    */
     OSMRelationMember::Type getMemberType( OSMRelationMember member );
+    
+    /**
+    Returns the type of the member at position i in the QList used to hold the members (the
+    same QList returned my members() ). This (or getMemberType( OSMRelationMember ) ) should 
+    be used before getMemberNode() or getMemberWay() to ensure you use the correct function 
+    to get the OSMNode or OSMWay.
+    
+    @param i The position of the member within the QList
+    
+    @return The type of the member at position i (i.e. members().at( i ).type() )
+    */
     OSMRelationMember::Type getMemberType( int i );
     
-    //Get OSMNode from OSMRelationMember object
+    /**
+    This function uses OSMMap::getNodeById() in the parent OSMMap to return a pointer to the
+    OSMNode object referenced by the OSMRelationMember provided. This function should be
+    used in conjunction with getMemberType() to make sure the OSMRelationMember you are
+    requesting represents a node, rather than a way.
+    
+    @param member The OSMRelationMember representing the OSMNode to be returned
+    
+    @return The OSMNode represented by member
+    */
     OSMNode* getMemberNode( OSMRelationMember member );
     
-    //Get OSMNode by index in the QList
+    /**
+    A convenience function, returns the OSMNode represented by members().at( i )
+    
+    @see getMemberNode( OSMRelationMember )
+    
+    @param i The index of the member
+    
+    @return The OSMNode represented my members().at( i )
+    */
     OSMNode* getMemberNode( int i );
     
-    //Get OSMWay from OSMRelationMember object
+    /**
+    This function uses OSMMap::getWayById() in the parent OSMMap to return a pointer to the
+    OSMWay object referenced by the OSMRelationMember provided. This function should be
+    used in conjunction with getMemberType() to make sure the OSMRelationMember you are
+    requesting represents a way, rather than a node.
+    
+    @param member The OSMRelationMember representing the OSMWay to be returned
+    
+    @return The OSMWay represented by member
+    */
     OSMWay* getMemberWay( OSMRelationMember member );
     
-    //Get OSMWay by index in the QList
+    /**
+    A convenience function, returns the OSMWay represented by members().at( i )
+    
+    @see getMemberWay( OSMRelationMember )
+    
+    @param i The index of the member
+    
+    @return The OSMWay represented my members().at( i )
+    */
     OSMWay* getMemberWay( int i );
     
+    /**
+    Set the id of the relation
+    
+    @param id The id of the realtion
+    */
     void setId( int id );
+    
+    /**
+    Set the visibility of the relations members
+    
+    @param visible True if the relation is to be shown on the map
+    */
     void setVisible( bool visible );
+    
+    /**
+    Set whether the relation is part of another relation
+    
+    @param True if the relation is related
+    */
     void setRelated( bool related );
     
+    /**
+    Returns the id of the relation
+    
+    @return The id of the relation
+    */
     int id();
+    
+    /**
+    Returns true if the relation is to be shown on the map
+    
+    @return The visibility of the relation
+    */
     bool visible();
+    
+    /**
+    Returns true if the relation is part of another relation
+    
+    @return True if the realtion is related
+    */
     bool related();
     
   private:

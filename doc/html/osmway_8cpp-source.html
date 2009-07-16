@@ -22,58 +22,79 @@
 <a name="l00002"></a>00002 
 <a name="l00003"></a>00003 <span class="preprocessor">#include "osmnode.h"</span>
 <a name="l00004"></a>00004 
-<a name="l00005"></a>00005 OSMWay::OSMWay() 
-<a name="l00006"></a>00006 {
-<a name="l00007"></a>00007 }
-<a name="l00008"></a>00008 
-<a name="l00009"></a>00009 OSMWay::OSMWay( <span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> visible )
-<a name="l00010"></a>00010 {
-<a name="l00011"></a>00011   m_id = id;
-<a name="l00012"></a>00012   m_visible = visible;
-<a name="l00013"></a>00013   m_related = <span class="keyword">false</span>;
-<a name="l00014"></a>00014 }
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016 <span class="keywordtype">void</span> OSMWay::addNode( OSMNode* node ) 
-<a name="l00017"></a>00017 {
-<a name="l00018"></a>00018  m_nodes.append( node ); 
-<a name="l00019"></a>00019 }
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 QList&lt;OSMNode*&gt; OSMWay::nodes() 
-<a name="l00022"></a>00022 {
-<a name="l00023"></a>00023  <span class="keywordflow">return</span> m_nodes; 
-<a name="l00024"></a>00024 }
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="keywordtype">void</span> OSMWay::setId( <span class="keywordtype">int</span> <span class="keywordtype">id</span> ) 
-<a name="l00027"></a>00027 {
-<a name="l00028"></a>00028  m_id = id; 
-<a name="l00029"></a>00029 }
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031 <span class="keywordtype">void</span> OSMWay::setVisible( <span class="keywordtype">bool</span> visible ) 
-<a name="l00032"></a>00032 {
-<a name="l00033"></a>00033  m_visible = visible;
-<a name="l00034"></a>00034 }
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036 <span class="keywordtype">void</span> OSMWay::setRelated( <span class="keywordtype">bool</span> related ) 
-<a name="l00037"></a>00037 {
-<a name="l00038"></a>00038  m_related = related; 
-<a name="l00039"></a>00039 }
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041 <span class="keywordtype">int</span> OSMWay::id() 
-<a name="l00042"></a>00042 {
-<a name="l00043"></a>00043  <span class="keywordflow">return</span> m_id; 
-<a name="l00044"></a>00044 }
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046 <span class="keywordtype">bool</span> OSMWay::visible() 
-<a name="l00047"></a>00047 {
-<a name="l00048"></a>00048  <span class="keywordflow">return</span> m_visible; 
-<a name="l00049"></a>00049 }
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051 <span class="keywordtype">bool</span> OSMWay::related() 
-<a name="l00052"></a>00052 {
-<a name="l00053"></a>00053  <span class="keywordflow">return</span> m_related; 
-<a name="l00054"></a>00054 }
+<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;QDebug&gt;</span>
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 OSMWay::OSMWay() 
+<a name="l00008"></a>00008 {
+<a name="l00009"></a>00009 }
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 OSMWay::OSMWay( <span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> visible )
+<a name="l00012"></a>00012 {
+<a name="l00013"></a>00013   m_id = id;
+<a name="l00014"></a>00014   m_visible = visible;
+<a name="l00015"></a>00015   m_related = <span class="keyword">false</span>;
+<a name="l00016"></a>00016 }
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="keywordtype">void</span> OSMWay::addNode( <a class="code" href="classOSMNode.html">OSMNode</a>* node ) 
+<a name="l00019"></a>00019 {
+<a name="l00020"></a>00020   node-&gt;<a class="code" href="classOSMNode.html#e21ae16731da846f573f52bc36eb6d13">setRelated</a>( <span class="keyword">true</span> );
+<a name="l00021"></a>00021   m_nodes.append( node ); 
+<a name="l00022"></a>00022 }
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 QList&lt;OSMNode*&gt; OSMWay::nodes() 
+<a name="l00025"></a>00025 {
+<a name="l00026"></a>00026   <span class="keywordflow">return</span> m_nodes; 
+<a name="l00027"></a>00027 }
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="keywordtype">void</span> OSMWay::setId( <span class="keywordtype">int</span> <span class="keywordtype">id</span> ) 
+<a name="l00030"></a>00030 {
+<a name="l00031"></a>00031   m_id = id; 
+<a name="l00032"></a>00032 }
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="keywordtype">void</span> OSMWay::setVisible( <span class="keywordtype">bool</span> visible ) 
+<a name="l00035"></a>00035 {
+<a name="l00036"></a>00036   m_visible = visible;
+<a name="l00037"></a>00037 }
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="keywordtype">void</span> OSMWay::setRelated( <span class="keywordtype">bool</span> related ) 
+<a name="l00040"></a>00040 {
+<a name="l00041"></a>00041   m_related = related; 
+<a name="l00042"></a>00042 }
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 <span class="keywordtype">int</span> OSMWay::id() 
+<a name="l00045"></a>00045 {
+<a name="l00046"></a>00046   <span class="keywordflow">return</span> m_id; 
+<a name="l00047"></a>00047 }
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 <span class="keywordtype">bool</span> OSMWay::visible() 
+<a name="l00050"></a>00050 {
+<a name="l00051"></a>00051   <span class="keywordflow">return</span> m_visible; 
+<a name="l00052"></a>00052 }
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 <span class="keywordtype">bool</span> OSMWay::related() 
+<a name="l00055"></a>00055 {
+<a name="l00056"></a>00056   <span class="keywordflow">return</span> m_related; 
+<a name="l00057"></a>00057 }
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059 <span class="keywordtype">void</span> OSMWay::paint( QPainter* painter, <span class="keywordtype">double</span> minlat, <span class="keywordtype">double</span> minlon )
+<a name="l00060"></a>00060 {
+<a name="l00061"></a>00061   QPolygon polygon;
+<a name="l00062"></a>00062   <span class="keywordflow">foreach</span>( <a class="code" href="classOSMNode.html">OSMNode</a>* i, nodes() )
+<a name="l00063"></a>00063   {
+<a name="l00064"></a>00064     <span class="comment">//TODO: The *2000 (or whatever it is now) is for zoom purposes, it needs to be part of some sort of</span>
+<a name="l00065"></a>00065     <span class="comment">//zoom feature/variable</span>
+<a name="l00066"></a>00066     polygon.append( QPoint( (i-&gt;<a class="code" href="classOSMNode.html#ccd706ba1fbd22ff4a8f2044d0e80f72">lon</a>() - minlon) * 40000, painter-&gt;device()-&gt;height() - (i-&gt;<a class="code" href="classOSMNode.html#8395b18c89c105f41bc7f0a0a6e89d41">lat</a>() - minlat) * 40000 ) );
+<a name="l00067"></a>00067   }
+<a name="l00068"></a>00068   
+<a name="l00069"></a>00069   qDebug() &lt;&lt; <span class="stringliteral">"draw ["</span> &lt;&lt; polygon[0].x() &lt;&lt; <span class="stringliteral">","</span> &lt;&lt; polygon[0].y() &lt;&lt; <span class="stringliteral">"]"</span>;
+<a name="l00070"></a>00070   
+<a name="l00071"></a>00071   <span class="keywordflow">if</span>( i.get
+<a name="l00072"></a>00072   <span class="keywordflow">else</span>
+<a name="l00073"></a>00073     painter-&gt;setPen( QPen( QBrush( Qt::black ), 2 ) );
+<a name="l00074"></a>00074   painter-&gt;drawPolyline( polygon );
+<a name="l00075"></a>00075 }
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jul 13 06:01:12 2009 for SatNav by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 15 02:09:53 2009 for SatNav by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

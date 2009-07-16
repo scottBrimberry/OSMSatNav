@@ -1,11 +1,28 @@
-#include <QtDebug>
+#include <QApplication>
+#include <QDebug>
 #include <QFile>
+#include <QLabel>
+#include <QPainter>
 #include <QXmlStreamReader>
 
 #include "osmmap.h"
 
+#include "mercator.h"
+
 int main( int argc, char** argv )
 {
+  //BEGIN TEST
+  QApplication app( argc, argv );
+  
+  QLabel label;
+  
+  QPixmap pixmap( 500, 400 );
+  
+  QPainter painter( &pixmap );
+  pixmap.fill( QColor( 227, 202, 166 ) );
+  
+  //END TEST
+  
   OSMMap map;
   
   QXmlStreamReader xml;
@@ -24,6 +41,24 @@ int main( int argc, char** argv )
     
     if( xml.isStartElement() )
     {
+      //#########################
+      //# Start <bounds> tag    #
+      //#########################
+      if( xml.name() == "bounds" )
+      {
+        foreach( QXmlStreamAttribute i, xml.attributes() )
+        {
+          if( i.name() == "minlat" )
+            map.setMinLat( i.value().toString().toDouble() );
+          else if( i.name() == "maxlat" )
+            map.setMaxLat( i.value().toString().toDouble() );
+          else if( i.name() == "minlon" )
+            map.setMinLon( i.value().toString().toDouble() );
+          else if( i.name() == "maxlon" )
+            map.setMaxLon( i.value().toString().toDouble() );
+        }
+      }
+      
       //#########################
       //# Start <node> tag      #
       //#########################
@@ -151,15 +186,25 @@ int main( int argc, char** argv )
     qDebug() << "Error";
   }
   
-  qDebug() << "Finished processing";
+  //BEGIN TEST
   
-  foreach( OSMRelation i, map.relations() )
-  {
-    qDebug() << "Id: " << i.id() << " Visible: " << i.visible();
-    foreach( OSMTag j, i.tags() )
-      qDebug() << "    " << j.name() << " = " << j.value();
-    foreach( OSMRelationMember j, i.members() )
-      qDebug() << "    " << j.ref();
-  }
+  qDebug() << "Test:";
+  qDebug() << Mercator::LatToY( 60 );
+  
+  qDebug() << "Lat: " << map.minLat() << "-" << map.maxLat();
+  qDebug() << "Lon: " << map.minLon() << "-" << map.maxLon();
+  qDebug() << "X: " << map.minX() << "-" << map.maxX();
+  qDebug() << "Y: " << map.minY() << "-" << map.maxY();
+  
+  map.paint( &painter );
+  
+  label.setPixmap( pixmap );
+  
+  label.show();
+  app.exec();
+  
+  return 0;
+  
+  //END TEST
   
 }

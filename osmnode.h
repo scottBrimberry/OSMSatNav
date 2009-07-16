@@ -56,7 +56,7 @@ class OSMNode: public OSMTaggable
     a way or relation, it will be rendered on the map as part of that way
     or relation instead of independently as a POI
     
-    @param related True is the node is related to a way or relation
+    @param related True if the node is related to a way or relation
     */
     void setRelated( bool related );
     
@@ -67,6 +67,18 @@ class OSMNode: public OSMTaggable
     @return The unique id of the node
     */
     int id();
+    /**
+    Get the x position of the node
+    
+    @return The x position of the node
+    */
+    double x();
+    /**
+    Get the y position of the node
+    
+    @return The y position of the node
+    */
+    double y();
     /**
     Get the latitude of the node
     
@@ -97,6 +109,8 @@ class OSMNode: public OSMTaggable
     int m_id;
     double m_lat;
     double m_lon;
+    double m_x;
+    double m_y;
     bool m_visible;
     //True if part of a relation (i.e. if false, then POI)
     bool m_related;
