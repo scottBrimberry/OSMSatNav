@@ -19,6 +19,90 @@ class OSMMap
     /** Create an empty Map */
     OSMMap();
     
+    /** 
+    Set the minimum latitude of the map
+    
+    @param minLat The minimum latitude of the map
+    */
+    void setMinLat( double minLat );
+    
+    /** 
+    Set the maximum latitude of the map
+    
+    @param maxLat The maximum latitude of the map
+    */
+    void setMaxLat( double maxLat );
+    
+    /** 
+    Set the minimum longitude of the map
+    
+    @param minLon The minimum longitude of the map
+    */
+    void setMinLon( double minLon );
+    
+    /** 
+    Set the maximum longitude of the map
+    
+    @param maxLon The maximum longitude of the map
+    */
+    void setMaxLon( double maxLon );
+    
+    /** 
+    Return the minimum latitude of the map
+    
+    @return The minimum latitude of the map
+    */
+    double minLat();
+    
+    /** 
+    Return the maximum latitude of the map
+    
+    @return The maximum latitude of the map
+    */
+    double maxLat();
+    
+    /** 
+    Return the minimum longitude of the map
+    
+    @return The minimum longitude of the map
+    */
+    double minLon();
+    
+    /** 
+    Return the maximum longitude of the map
+    
+    @return The maximum longitude of the map
+    */
+    double maxLon();
+    
+    /** 
+    Return the minimum x coordinate of the map
+    
+    @return The minimum x coordinate of the map
+    */
+    double minX();
+    
+    /** 
+    Return the maximum x coordinate of the map
+    
+    @return The maximum x coordinate of the map
+    */
+    double maxX();
+    
+    /** 
+    Return the minimum y coordinate of the map
+    
+    @return The minimum y coordinate of the map
+    */
+    double minY();
+    
+    /** 
+    Return the maximum y coordinate of the map
+    
+    @return The maximum y coordinate of the map
+    */
+    double maxY();
+    
     /**
     Add an OSMNode object to the map 
     
@@ -167,10 +251,35 @@ class OSMMap
     */
     void paint( QPainter* painter );
     
+    /**
+    Zooms the map in the specified number of steps.
+   
+    @param steps The number of steps to zoom. Defaults to 1
+    */
+    void zoomIn( int steps = 1 );
+    
+    /**
+    Zooms the map out the specified number of steps.
+   
+    @param steps The number of steps to zoom. Defaults to 1
+    */
+    void zoomOut( int steps = 1 );
+    
   private:
     QList<OSMNode> m_nodes;
     QList<OSMWay> m_ways;
     QList<OSMRelation> m_relations;
+    
+    double m_minlat;
+    double m_maxlat;
+    double m_minlon;
+    double m_maxlon;
+    double m_minx;
+    double m_maxx;
+    double m_miny;
+    double m_maxy;
+    
+    int m_zoomlevel;
 };
 
 #endif

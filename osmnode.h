@@ -68,6 +68,18 @@ class OSMNode: public OSMTaggable
     */
     int id();
     /**
+    Get the x position of the node
+    
+    @return The x position of the node
+    */
+    double x();
+    /**
+    Get the y position of the node
+    
+    @return The y position of the node
+    */
+    double y();
+    /**
     Get the latitude of the node
     
     @return The latitude of the node
@@ -97,6 +109,8 @@ class OSMNode: public OSMTaggable
     int m_id;
     double m_lat;
     double m_lon;
+    double m_x;
+    double m_y;
     bool m_visible;
     //True if part of a relation (i.e. if false, then POI)
     bool m_related;

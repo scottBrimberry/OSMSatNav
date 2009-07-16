@@ -56,26 +56,34 @@ bool OSMWay::related()
   return m_related; 
 }
 
-void OSMWay::paint( QPainter* painter, double minlat, double minlon )
+void OSMWay::paint( QPainter* painter, double minx, double miny )
 {
   QPolygon polygon;
   foreach( OSMNode* i, nodes() )
   {
     //TODO: The *2000 (or whatever it is now) is for zoom purposes, it needs to be part of some sort of
     //zoom feature/variable
-    polygon.append( QPoint( (i->lon() - minlon) * 20000, painter->device()->height() - (i->lat() - minlat) * 20000 ) );
+    polygon.append( QPoint( (i->x() - minx) * 2000, painter->device()->height() - (i->y() - miny) * 2000 ) );
   }
-  
-  qDebug() << "draw [" << polygon[0].x() << "," << polygon[0].y() << "]";
   
   QString value;
   
   if( hasTag( "waterway", value ) )
     painter->setPen( QPen( QBrush( Qt::blue ), 2 ) );
-  else if( hasTag( "highway", value ) && ( value == "footway" || value == "cycleway" ) )
+  else if( hasTag( "highway", value ) && ( value == "footway" || value == "cycleway" ) ) //Footpath
+    painter->setPen( QPen(QBrush( Qt::red ), 1, Qt::DotLine ) );
+  else if( hasTag( "highway", value ) && ( value.startsWith( "motorway" ) ) ) //Motorway
+    painter->setPen( QPen(QBrush( Qt::blue ), 2 ) );
+  else if( hasTag( "highway", value ) && ( value.startsWith( "trunk" ) ) ) //Highway (A Road)
+    painter->setPen( QPen(QBrush( Qt::green ), 2 ) );
+  else if( hasTag( "highway", value ) && ( value.startsWith( "primary" ) ) ) //Highway (A Road)
     painter->setPen( QPen(QBrush( Qt::red ), 2 ) );
-  else if( hasTag( "highway", value ) ) //Road
+  else if( hasTag( "highway", value ) && ( value.startsWith( "secondary" ) ) ) //Highway (A Road)
+    painter->setPen( QPen(QBrush( QColor( 255, 127, 0 ) ), 2 ) );
+  else if( hasTag( "highway", value ) && ( value.startsWith( "tertiary" ) ) ) //Highway (A Road)
     painter->setPen( QPen(QBrush( Qt::yellow ), 2 ) );
+  else if( hasTag( "highway", value ) ) //Other road (unclassified, redidential)
+    painter->setPen( QPen(QBrush( Qt::white ), 2 ) );
   else if( hasTag( "railway", value ) )
     painter->setPen( QPen(QBrush( Qt::black ), 2 ) );
   else

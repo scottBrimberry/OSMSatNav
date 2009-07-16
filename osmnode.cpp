@@ -1,5 +1,7 @@
 #include "osmnode.h"
 
+#include "mercator.h"
+
 OSMNode::OSMNode() 
 {
 }
@@ -7,8 +9,8 @@ OSMNode::OSMNode()
 OSMNode::OSMNode( int id, double lat, double lon, bool visible )
 {
   m_id = id;
-  m_lat = lat;
-  m_lon = lon;
+  setLat( lat );
+  setLon( lon );
   m_visible = visible;
   m_related = false;
 }
@@ -21,11 +23,14 @@ void OSMNode::setId( int id )
 void OSMNode::setLat( double lat ) 
 {
   m_lat = lat; 
+  m_y = Mercator::LatToY( lat );
 }
 
+//TODO: Ensure the centre of map is needed
 void OSMNode::setLon( double lon ) 
 {
   m_lon = lon; 
+  m_x = Mercator::LonToX( lon );
 }
 
 void OSMNode::setVisible( bool visible ) 
@@ -51,6 +56,16 @@ double OSMNode::lat()
 double OSMNode::lon() 
 {
   return m_lon;
+}
+
+double OSMNode::x() 
+{
+  return m_x; 
+}
+
+double OSMNode::y() 
+{
+  return m_y;
 }
 
 bool OSMNode::visible() 

@@ -7,6 +7,8 @@
 
 #include "osmmap.h"
 
+#include "mercator.h"
+
 int main( int argc, char** argv )
 {
   //BEGIN TEST
@@ -17,11 +19,7 @@ int main( int argc, char** argv )
   QPixmap pixmap( 500, 400 );
   
   QPainter painter( &pixmap );
-  
-  label.setPixmap( pixmap );
   pixmap.fill( QColor( 227, 202, 166 ) );
-  
-  painter.setPen( QPen( QBrush( Qt::blue ), 2 ) );
   
   //END TEST
   
@@ -43,6 +41,24 @@ int main( int argc, char** argv )
     
     if( xml.isStartElement() )
     {
+      //#########################
+      //# Start <bounds> tag    #
+      //#########################
+      if( xml.name() == "bounds" )
+      {
+        foreach( QXmlStreamAttribute i, xml.attributes() )
+        {
+          if( i.name() == "minlat" )
+            map.setMinLat( i.value().toString().toDouble() );
+          else if( i.name() == "maxlat" )
+            map.setMaxLat( i.value().toString().toDouble() );
+          else if( i.name() == "minlon" )
+            map.setMinLon( i.value().toString().toDouble() );
+          else if( i.name() == "maxlon" )
+            map.setMaxLon( i.value().toString().toDouble() );
+        }
+      }
+      
       //#########################
       //# Start <node> tag      #
       //#########################
@@ -172,10 +188,19 @@ int main( int argc, char** argv )
   
   //BEGIN TEST
   
-  map.paint( &painter );
-     
-  label.show();
+  qDebug() << "Test:";
+  qDebug() << Mercator::LatToY( 60 );
   
+  qDebug() << "Lat: " << map.minLat() << "-" << map.maxLat();
+  qDebug() << "Lon: " << map.minLon() << "-" << map.maxLon();
+  qDebug() << "X: " << map.minX() << "-" << map.maxX();
+  qDebug() << "Y: " << map.minY() << "-" << map.maxY();
+  
+  map.paint( &painter );
+  
+  label.setPixmap( pixmap );
+  
+  label.show();
   app.exec();
   
   return 0;
