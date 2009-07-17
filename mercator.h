@@ -28,10 +28,12 @@ class Mercator
     */
     static double LonToX( double lon )
     {
+      //No projection
+      return lon;
       //Mercator
       //return lon;
       //Plate carree
-      return lon * cos( LAT1 );
+      //return lon * ( 0 - cos( LAT1 ) );
     }
     
     /**
@@ -44,10 +46,12 @@ class Mercator
     */
     static double XToLon( double x )
     {
+      //No projection
+      return x;
       //Mercator
       //return x;
       //Plate carree
-      return x / cos( LAT1 );
+      //return x / cos( LAT1 );
     }
     
     /**
@@ -59,10 +63,12 @@ class Mercator
     */
     static double LatToY( double lat )
     {
+      //No projection
+      return lat;
       //Mercator
       //return log( tan ( ( PI / 4 ) + ( lat / 2 ) ) );
       //Plate carree
-      return lat;
+      //return lat;
     }
     
     /**
@@ -74,10 +80,12 @@ class Mercator
     */
     static double YToLat( double y )
     {
+      //No projection
+      return y;
       //Mercator
       //return atan( sinh( y ) );
       //Plate carree
-      return y;
+      //return y;
     }
 };
 

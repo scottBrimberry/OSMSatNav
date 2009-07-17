@@ -84,7 +84,7 @@ class OSMWay: public OSMTaggable
     
     @param painter The QPainter to use to draw the map
     */
-    void paint( QPainter* painter, double minlat, double minlon);
+    void paint( QPainter* painter, double minlat, double minlon, int zoomMultiplier );
     
   private:
     //Taken straight from XML

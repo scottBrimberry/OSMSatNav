@@ -3,9 +3,13 @@
 #include "mercator.h"
 #include "osmrelation.h"
 
-OSMMap::OSMMap() {}
+#include <QDebug>
 
-//TODO: Check cnter is needed
+OSMMap::OSMMap() 
+{
+  m_zoomlevel = 0;
+}
+
 void OSMMap::setMinLat( double lat ) { m_minlat = lat; m_miny = Mercator::LatToY( lat ); }
 void OSMMap::setMaxLat( double lat ) { m_maxlat = lat; m_maxy = Mercator::LatToY( lat ); }
 void OSMMap::setMinLon( double lon ) { m_minlon = lon; m_minx = Mercator::LonToX( lon ); }
@@ -104,7 +108,40 @@ void OSMMap::paint( QPainter* painter )
   //Ways
   foreach( OSMWay i, ways() )
   {
-    //TODO: The mim lat and lon need to be part of the object read from the XML file
-    i.paint( painter, 52.622, -2.5293 );
+    //TODO: The min lat and lon need to be part of the object read from the XML file
+    i.paint( painter, m_minx, m_miny, zoomMultiplier() );
   }
+}
+
+void OSMMap::zoomIn( int steps )
+{
+  m_zoomlevel += steps;
+}
+
+void OSMMap::zoomOut( int steps )
+{
+  m_zoomlevel -= steps;
+}
+
+void OSMMap::zoom( int level )
+{
+  m_zoomlevel = level;
+}
+
+int OSMMap::zoomMultiplier()
+{
+  //Zoom level 0 displays entire map in 800x800 display
+  
+  //Get zoom multiplier at level 0
+  int multiplier;
+  
+  if( ( m_maxx - m_minx ) > ( m_maxy - m_miny ) )
+    multiplier = 800 / ( m_maxx - m_minx );
+  else
+    multiplier = 800 / ( m_maxy - m_miny );
+  
+  for( int i = 0; i < m_zoomlevel; i++ )
+    multiplier = multiplier * 2;
+  
+  return multiplier;
 }

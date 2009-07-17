@@ -264,8 +264,17 @@ class OSMMap
     @param steps The number of steps to zoom. Defaults to 1
     */
     void zoomOut( int steps = 1 );
+
+    /**
+    Zooms the map to the specified zoom level
+    
+    @param level The level to zoom to
+    */
+    void zoom( int level );
     
   private:
+    int zoomMultiplier();
+    
     QList<OSMNode> m_nodes;
     QList<OSMWay> m_ways;
     QList<OSMRelation> m_relations;

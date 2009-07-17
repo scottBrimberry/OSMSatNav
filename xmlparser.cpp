@@ -10,19 +10,7 @@
 #include "mercator.h"
 
 int main( int argc, char** argv )
-{
-  //BEGIN TEST
-  QApplication app( argc, argv );
-  
-  QLabel label;
-  
-  QPixmap pixmap( 500, 400 );
-  
-  QPainter painter( &pixmap );
-  pixmap.fill( QColor( 227, 202, 166 ) );
-  
-  //END TEST
-  
+{  
   OSMMap map;
   
   QXmlStreamReader xml;
@@ -185,18 +173,17 @@ int main( int argc, char** argv )
   if (xml.hasError()) {
     qDebug() << "Error";
   }
-  
+ 
   //BEGIN TEST
+
+  QApplication app( argc, argv );
   
-  qDebug() << "Test:";
-  qDebug() << Mercator::LatToY( 60 );
+  QLabel label;
   
-  qDebug() << "Lat: " << map.minLat() << "-" << map.maxLat();
-  qDebug() << "Lon: " << map.minLon() << "-" << map.maxLon();
-  qDebug() << "X: " << map.minX() << "-" << map.maxX();
-  qDebug() << "Y: " << map.minY() << "-" << map.maxY();
+  QPixmap pixmap( 800, 800 );
   
-  map.paint( &painter );
+  QPainter painter( &pixmap );
+  pixmap.fill( QColor( 227, 202, 166 ) );
   
   label.setPixmap( pixmap );
   
