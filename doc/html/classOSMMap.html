@@ -32,6 +32,30 @@
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#6dea99d0dda4e96d215755eb6306204d">OSMMap</a> ()</td></tr>
 
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#78ce4ce495b496919b458a80dd622764">setMinLat</a> (double minLat)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#6995360777b188a76bbafb9ffb39e2a3">setMaxLat</a> (double maxLat)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#b4247e62ff0114107f77e3c165818ec7">setMinLon</a> (double minLon)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#48c9f3bbb5ac025f6ba6ade6aa3d2903">setMaxLon</a> (double maxLon)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#9f9a3a795f4e9ece9cc4ac9444a6209d">minLat</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#da5869efd43fe9ea681b0939c5abd368">maxLat</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#58e0e00532d4e293129fb81007384503">minLon</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#6bb60a8478231f27e474dd73001a3661">maxLon</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#2797028a3c9138662fa8060b0dda7370">minX</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#899ee3aa66d85a9b34635eeb121d2bd2">maxX</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#739349c56043686a640b1aff3686f6f7">minY</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#67776f90b6e165594513cb46b3f64b34">maxY</a> ()</td></tr>
+
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#8fe27999bb628372c73e7090d6557acb">addNode</a> (<a class="el" href="classOSMNode.html">OSMNode</a> node)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">QList&lt; <a class="el" href="classOSMNode.html">OSMNode</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#df2f9b92f38381e16a061f80af04fcc2">nodes</a> ()</td></tr>
@@ -58,6 +82,12 @@
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#c688257bd2150f4ab03b65d096cda94b">paint</a> (QPainter *painter)</td></tr>
 
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#845cab03d9874a321a85b1d0998f861c">zoomIn</a> (int steps=1)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#9ae40280005bc7f4edaf1c6b7eba1053">zoomOut</a> (int steps=1)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOSMMap.html#48e8e483c51e811e23ac71ed34cdea87">zoom</a> (int level)</td></tr>
+
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 The <a class="el" href="classOSMMap.html">OSMMap</a> class holds all nodes, ways and relations representing an area. 
@@ -80,7 +110,7 @@ The <a class="el" href="classOSMMap.html">OSMMap</a> class holds all nodes, ways
 
 <p>
 Create an empty Map 
-<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00005">5</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00008">8</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -109,7 +139,7 @@ Add an <a class="el" href="classOSMNode.html">OSMNode</a> object to the map<p>
   </table>
 </dl>
 
-<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00009">9</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00028">28</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -137,7 +167,7 @@ Add an <a class="el" href="classOSMRelation.html">OSMRelation</a> object to the 
   </table>
 </dl>
 
-<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00061">61</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00080">80</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -165,7 +195,7 @@ Add an OSMWay object to the map<p>
   </table>
 </dl>
 
-<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00035">35</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00054">54</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -196,7 +226,7 @@ Returns pointer to the node with the ID specified. Unlike <a class="el" href="cl
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>A pointer to the requested <a class="el" href="classOSMNode.html">OSMNode</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00024">24</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00043">43</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="osmrelation_8cpp-source.html#l00067">OSMRelation::getMemberNode()</a>.</p>
 
@@ -229,7 +259,7 @@ Returns pointer to the relation with the ID specified. Unlike <a class="el" href
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>A pointer to the requested <a class="el" href="classOSMRelation.html">OSMRelation</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00076">76</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00095">95</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -260,9 +290,193 @@ Returns pointer to the way with the ID specified. Unlike <a class="el" href="cla
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>A pointer to the requested OSMWay </dd></dl>
 
-<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00050">50</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00069">69</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="osmrelation_8cpp-source.html#l00080">OSMRelation::getMemberWay()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="da5869efd43fe9ea681b0939c5abd368"></a><!-- doxytag: member="OSMMap::maxLat" ref="da5869efd43fe9ea681b0939c5abd368" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double OSMMap::maxLat           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Return the maximum latitude of the map<p>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>The maximum latitude of the map </dd></dl>
+
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00019">19</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="6bb60a8478231f27e474dd73001a3661"></a><!-- doxytag: member="OSMMap::maxLon" ref="6bb60a8478231f27e474dd73001a3661" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double OSMMap::maxLon           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Return the maximum longitude of the map<p>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>The maximum longitude of the map </dd></dl>
+
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00021">21</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="899ee3aa66d85a9b34635eeb121d2bd2"></a><!-- doxytag: member="OSMMap::maxX" ref="899ee3aa66d85a9b34635eeb121d2bd2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double OSMMap::maxX           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Return the maximum x coordinate of the map<p>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>The maximum x coordinate of the map </dd></dl>
+
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00024">24</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="67776f90b6e165594513cb46b3f64b34"></a><!-- doxytag: member="OSMMap::maxY" ref="67776f90b6e165594513cb46b3f64b34" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double OSMMap::maxY           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Return the maximum y coordinate of the map<p>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>The maximum y coordinate of the map </dd></dl>
+
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00026">26</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="9f9a3a795f4e9ece9cc4ac9444a6209d"></a><!-- doxytag: member="OSMMap::minLat" ref="9f9a3a795f4e9ece9cc4ac9444a6209d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double OSMMap::minLat           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Return the minimum latitude of the map<p>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>The minimum latitude of the map </dd></dl>
+
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00018">18</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="58e0e00532d4e293129fb81007384503"></a><!-- doxytag: member="OSMMap::minLon" ref="58e0e00532d4e293129fb81007384503" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double OSMMap::minLon           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Return the minimum longitude of the map<p>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>The minimum longitude of the map </dd></dl>
+
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00020">20</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="2797028a3c9138662fa8060b0dda7370"></a><!-- doxytag: member="OSMMap::minX" ref="2797028a3c9138662fa8060b0dda7370" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double OSMMap::minX           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Return the minimum x coordinate of the map<p>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>The minimum x coordinate of the map </dd></dl>
+
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00023">23</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="739349c56043686a640b1aff3686f6f7"></a><!-- doxytag: member="OSMMap::minY" ref="739349c56043686a640b1aff3686f6f7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double OSMMap::minY           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Return the minimum y coordinate of the map<p>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>The minimum y coordinate of the map </dd></dl>
+
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00025">25</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -293,7 +507,7 @@ Return the node at position id in the list of nodes. Equivalent to <a class="el"
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>An <a class="el" href="classOSMNode.html">OSMNode</a> object representing the node at position id. </dd></dl>
 
-<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00019">19</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00038">38</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -318,7 +532,7 @@ Return all nodes in the map as a QList. Be aware that for large maps, this list 
 <a class="el" href="classOSMMap.html#bbe5b9a87951d98513978ebd48afb71a">node( int )</a></dd></dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>A QList&lt;OSMNode&gt; containing all the nodes in the map </dd></dl>
 
-<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00014">14</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00033">33</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -346,9 +560,9 @@ Draws the map to the provided QPainter<p>
   </table>
 </dl>
 
-<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00087">87</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00106">106</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
 
-<p>References <a class="el" href="osmmap_8cpp-source.html#l00040">ways()</a>.</p>
+<p>References <a class="el" href="osmmap_8cpp-source.html#l00059">ways()</a>.</p>
 
 </div>
 </div><p>
@@ -379,7 +593,7 @@ Return the relation at position id in the list of relations. Equivalent to <a cl
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>An <a class="el" href="classOSMRelation.html">OSMRelation</a> object representing the relation at position id. </dd></dl>
 
-<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00071">71</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00090">90</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -404,7 +618,127 @@ Return all relations in the map as a QList. Be aware that for large maps, this l
 <a class="el" href="classOSMMap.html#c01ae2de30cbe0d2060ea4d2156979cc">relation( int )</a></dd></dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>A QList&lt;OSMNode&gt; containing all the relations in the map </dd></dl>
 
-<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00066">66</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00085">85</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="6995360777b188a76bbafb9ffb39e2a3"></a><!-- doxytag: member="OSMMap::setMaxLat" ref="6995360777b188a76bbafb9ffb39e2a3" args="(double maxLat)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OSMMap::setMaxLat           </td>
+          <td>(</td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>maxLat</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Set the maximum latitude of the map<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>maxLat</em>&nbsp;</td><td>The maximum latitude of the map </td></tr>
+  </table>
+</dl>
+
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00014">14</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+
+<p>References <a class="el" href="mercator_8h-source.html#l00062">Mercator::LatToY()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="48c9f3bbb5ac025f6ba6ade6aa3d2903"></a><!-- doxytag: member="OSMMap::setMaxLon" ref="48c9f3bbb5ac025f6ba6ade6aa3d2903" args="(double maxLon)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OSMMap::setMaxLon           </td>
+          <td>(</td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>maxLon</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Set the maximum longitude of the map<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>maxLon</em>&nbsp;</td><td>The maximum longitude of the map </td></tr>
+  </table>
+</dl>
+
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00016">16</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+
+<p>References <a class="el" href="mercator_8h-source.html#l00028">Mercator::LonToX()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="78ce4ce495b496919b458a80dd622764"></a><!-- doxytag: member="OSMMap::setMinLat" ref="78ce4ce495b496919b458a80dd622764" args="(double minLat)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OSMMap::setMinLat           </td>
+          <td>(</td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>minLat</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Set the minimum latitude of the map<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>minLat</em>&nbsp;</td><td>The minimum latitude of the map </td></tr>
+  </table>
+</dl>
+
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00013">13</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+
+<p>References <a class="el" href="mercator_8h-source.html#l00062">Mercator::LatToY()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="b4247e62ff0114107f77e3c165818ec7"></a><!-- doxytag: member="OSMMap::setMinLon" ref="b4247e62ff0114107f77e3c165818ec7" args="(double minLon)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OSMMap::setMinLon           </td>
+          <td>(</td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>minLon</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Set the minimum longitude of the map<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>minLon</em>&nbsp;</td><td>The minimum longitude of the map </td></tr>
+  </table>
+</dl>
+
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00015">15</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+
+<p>References <a class="el" href="mercator_8h-source.html#l00028">Mercator::LonToX()</a>.</p>
 
 </div>
 </div><p>
@@ -435,7 +769,7 @@ Return the way at position id in the list of ways. Equivalent to <a class="el" h
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>An OSMWay object representing the way at position id. </dd></dl>
 
-<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00045">45</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00064">64</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -460,16 +794,100 @@ Return all ways in the map as a QList. Be aware that for large maps, this list c
 <a class="el" href="classOSMMap.html#82a2c04e3d45cdd75d18dfd027be2d8a">way( int )</a></dd></dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>A QList&lt;OSMWay&gt; containing all the ways in the map </dd></dl>
 
-<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00040">40</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00059">59</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="osmmap_8cpp-source.html#l00087">paint()</a>.</p>
+<p>Referenced by <a class="el" href="osmmap_8cpp-source.html#l00106">paint()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="48e8e483c51e811e23ac71ed34cdea87"></a><!-- doxytag: member="OSMMap::zoom" ref="48e8e483c51e811e23ac71ed34cdea87" args="(int level)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OSMMap::zoom           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>level</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Zooms the map to the specified zoom level<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>level</em>&nbsp;</td><td>The level to zoom to </td></tr>
+  </table>
+</dl>
+
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00126">126</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="845cab03d9874a321a85b1d0998f861c"></a><!-- doxytag: member="OSMMap::zoomIn" ref="845cab03d9874a321a85b1d0998f861c" args="(int steps=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OSMMap::zoomIn           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>steps</em> = <code>1</code>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Zooms the map in the specified number of steps.<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>steps</em>&nbsp;</td><td>The number of steps to zoom. Defaults to 1 </td></tr>
+  </table>
+</dl>
+
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00116">116</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="9ae40280005bc7f4edaf1c6b7eba1053"></a><!-- doxytag: member="OSMMap::zoomOut" ref="9ae40280005bc7f4edaf1c6b7eba1053" args="(int steps=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OSMMap::zoomOut           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>steps</em> = <code>1</code>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Zooms the map out the specified number of steps.<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>steps</em>&nbsp;</td><td>The number of steps to zoom. Defaults to 1 </td></tr>
+  </table>
+</dl>
+
+<p>Definition at line <a class="el" href="osmmap_8cpp-source.html#l00121">121</a> of file <a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="osmmap_8h-source.html">osmmap.h</a><li><a class="el" href="osmmap_8cpp-source.html">osmmap.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 15 02:09:53 2009 for SatNav by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jul 20 16:19:22 2009 for SatNav by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

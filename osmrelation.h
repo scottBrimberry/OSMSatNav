@@ -142,7 +142,7 @@ class OSMRelation: public OSMTaggable
     /**
     Set whether the relation is part of another relation
     
-    @param True if the relation is related
+    @param related True if the relation is related
     */
     void setRelated( bool related );
     

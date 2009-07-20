@@ -35,41 +35,84 @@
 <a name="l00018"></a>00018   <span class="keyword">public</span>:
 <a name="l00020"></a>00020     <a class="code" href="classOSMMap.html#6dea99d0dda4e96d215755eb6306204d">OSMMap</a>();
 <a name="l00021"></a>00021     
-<a name="l00027"></a>00027     <span class="keywordtype">void</span> <a class="code" href="classOSMMap.html#8fe27999bb628372c73e7090d6557acb">addNode</a>( <a class="code" href="classOSMNode.html">OSMNode</a> <a class="code" href="classOSMMap.html#bbe5b9a87951d98513978ebd48afb71a">node</a> );
+<a name="l00027"></a>00027     <span class="keywordtype">void</span> <a class="code" href="classOSMMap.html#78ce4ce495b496919b458a80dd622764">setMinLat</a>( <span class="keywordtype">double</span> <a class="code" href="classOSMMap.html#9f9a3a795f4e9ece9cc4ac9444a6209d">minLat</a> );
 <a name="l00028"></a>00028     
-<a name="l00039"></a>00039     QList&lt;OSMNode&gt; <a class="code" href="classOSMMap.html#df2f9b92f38381e16a061f80af04fcc2">nodes</a>();
-<a name="l00040"></a>00040     
-<a name="l00051"></a>00051     <a class="code" href="classOSMNode.html">OSMNode</a> <a class="code" href="classOSMMap.html#bbe5b9a87951d98513978ebd48afb71a">node</a>( <span class="keywordtype">int</span> <span class="keywordtype">id</span> );
-<a name="l00052"></a>00052     
-<a name="l00067"></a>00067     <a class="code" href="classOSMNode.html">OSMNode</a>* <a class="code" href="classOSMMap.html#1861b3b8f93239cd808e1d3201d8d836">getNodePtrById</a>( <span class="keywordtype">int</span> <span class="keywordtype">id</span> );
-<a name="l00068"></a>00068     
-<a name="l00074"></a>00074     <span class="keywordtype">void</span> <a class="code" href="classOSMMap.html#7537035e395b11627b0548573c930034">addWay</a>( OSMWay <a class="code" href="classOSMMap.html#82a2c04e3d45cdd75d18dfd027be2d8a">way</a> );
-<a name="l00075"></a>00075     
-<a name="l00086"></a>00086     QList&lt;OSMWay&gt; <a class="code" href="classOSMMap.html#7ad372ac9fee89d8b8509881cdb80e6a">ways</a>();
-<a name="l00087"></a>00087     
-<a name="l00098"></a>00098     OSMWay <a class="code" href="classOSMMap.html#82a2c04e3d45cdd75d18dfd027be2d8a">way</a>( <span class="keywordtype">int</span> <span class="keywordtype">id</span> );
-<a name="l00099"></a>00099     
-<a name="l00114"></a>00114     OSMWay* <a class="code" href="classOSMMap.html#448831932540c67078073230c11b518d">getWayPtrById</a>( <span class="keywordtype">int</span> <span class="keywordtype">id</span> );
-<a name="l00115"></a>00115     
-<a name="l00121"></a>00121     <span class="keywordtype">void</span> <a class="code" href="classOSMMap.html#bd0f88ce7e1338d3dc466b8f26a98427">addRelation</a>( <a class="code" href="classOSMRelation.html">OSMRelation</a> <a class="code" href="classOSMMap.html#c01ae2de30cbe0d2060ea4d2156979cc">relation</a> );
-<a name="l00122"></a>00122     
-<a name="l00133"></a>00133     QList&lt;OSMRelation&gt; <a class="code" href="classOSMMap.html#67f8112703188cfe411deb2988aa390b">relations</a>();
-<a name="l00134"></a>00134     
-<a name="l00145"></a>00145     <a class="code" href="classOSMRelation.html">OSMRelation</a> <a class="code" href="classOSMMap.html#c01ae2de30cbe0d2060ea4d2156979cc">relation</a>( <span class="keywordtype">int</span> <span class="keywordtype">id</span> );
-<a name="l00146"></a>00146     
-<a name="l00161"></a>00161     <a class="code" href="classOSMRelation.html">OSMRelation</a>* <a class="code" href="classOSMMap.html#b8bb97e545801b5d3ce9e26d3c6cf7ab">getRelationPtrById</a>( <span class="keywordtype">int</span> <span class="keywordtype">id</span> );
-<a name="l00162"></a>00162     
-<a name="l00168"></a>00168     <span class="keywordtype">void</span> <a class="code" href="classOSMMap.html#c688257bd2150f4ab03b65d096cda94b">paint</a>( QPainter* painter );
-<a name="l00169"></a>00169     
-<a name="l00170"></a>00170   <span class="keyword">private</span>:
-<a name="l00171"></a>00171     QList&lt;OSMNode&gt; m_nodes;
-<a name="l00172"></a>00172     QList&lt;OSMWay&gt; m_ways;
-<a name="l00173"></a>00173     QList&lt;OSMRelation&gt; m_relations;
-<a name="l00174"></a>00174 };
-<a name="l00175"></a>00175 
-<a name="l00176"></a>00176 <span class="preprocessor">#endif</span>
+<a name="l00034"></a>00034     <span class="keywordtype">void</span> <a class="code" href="classOSMMap.html#6995360777b188a76bbafb9ffb39e2a3">setMaxLat</a>( <span class="keywordtype">double</span> <a class="code" href="classOSMMap.html#da5869efd43fe9ea681b0939c5abd368">maxLat</a> );
+<a name="l00035"></a>00035     
+<a name="l00041"></a>00041     <span class="keywordtype">void</span> <a class="code" href="classOSMMap.html#b4247e62ff0114107f77e3c165818ec7">setMinLon</a>( <span class="keywordtype">double</span> <a class="code" href="classOSMMap.html#58e0e00532d4e293129fb81007384503">minLon</a> );
+<a name="l00042"></a>00042     
+<a name="l00048"></a>00048     <span class="keywordtype">void</span> <a class="code" href="classOSMMap.html#48c9f3bbb5ac025f6ba6ade6aa3d2903">setMaxLon</a>( <span class="keywordtype">double</span> <a class="code" href="classOSMMap.html#6bb60a8478231f27e474dd73001a3661">maxLon</a> );
+<a name="l00049"></a>00049     
+<a name="l00055"></a>00055     <span class="keywordtype">double</span> <a class="code" href="classOSMMap.html#9f9a3a795f4e9ece9cc4ac9444a6209d">minLat</a>();
+<a name="l00056"></a>00056     
+<a name="l00062"></a>00062     <span class="keywordtype">double</span> <a class="code" href="classOSMMap.html#da5869efd43fe9ea681b0939c5abd368">maxLat</a>();
+<a name="l00063"></a>00063     
+<a name="l00069"></a>00069     <span class="keywordtype">double</span> <a class="code" href="classOSMMap.html#58e0e00532d4e293129fb81007384503">minLon</a>();
+<a name="l00070"></a>00070     
+<a name="l00076"></a>00076     <span class="keywordtype">double</span> <a class="code" href="classOSMMap.html#6bb60a8478231f27e474dd73001a3661">maxLon</a>();
+<a name="l00077"></a>00077     
+<a name="l00083"></a>00083     <span class="keywordtype">double</span> <a class="code" href="classOSMMap.html#2797028a3c9138662fa8060b0dda7370">minX</a>();
+<a name="l00084"></a>00084     
+<a name="l00090"></a>00090     <span class="keywordtype">double</span> <a class="code" href="classOSMMap.html#899ee3aa66d85a9b34635eeb121d2bd2">maxX</a>();
+<a name="l00091"></a>00091     
+<a name="l00097"></a>00097     <span class="keywordtype">double</span> <a class="code" href="classOSMMap.html#739349c56043686a640b1aff3686f6f7">minY</a>();
+<a name="l00098"></a>00098     
+<a name="l00104"></a>00104     <span class="keywordtype">double</span> <a class="code" href="classOSMMap.html#67776f90b6e165594513cb46b3f64b34">maxY</a>();
+<a name="l00105"></a>00105     
+<a name="l00111"></a>00111     <span class="keywordtype">void</span> <a class="code" href="classOSMMap.html#8fe27999bb628372c73e7090d6557acb">addNode</a>( <a class="code" href="classOSMNode.html">OSMNode</a> <a class="code" href="classOSMMap.html#bbe5b9a87951d98513978ebd48afb71a">node</a> );
+<a name="l00112"></a>00112     
+<a name="l00123"></a>00123     QList&lt;OSMNode&gt; <a class="code" href="classOSMMap.html#df2f9b92f38381e16a061f80af04fcc2">nodes</a>();
+<a name="l00124"></a>00124     
+<a name="l00135"></a>00135     <a class="code" href="classOSMNode.html">OSMNode</a> <a class="code" href="classOSMMap.html#bbe5b9a87951d98513978ebd48afb71a">node</a>( <span class="keywordtype">int</span> <span class="keywordtype">id</span> );
+<a name="l00136"></a>00136     
+<a name="l00151"></a>00151     <a class="code" href="classOSMNode.html">OSMNode</a>* <a class="code" href="classOSMMap.html#1861b3b8f93239cd808e1d3201d8d836">getNodePtrById</a>( <span class="keywordtype">int</span> <span class="keywordtype">id</span> );
+<a name="l00152"></a>00152     
+<a name="l00158"></a>00158     <span class="keywordtype">void</span> <a class="code" href="classOSMMap.html#7537035e395b11627b0548573c930034">addWay</a>( OSMWay <a class="code" href="classOSMMap.html#82a2c04e3d45cdd75d18dfd027be2d8a">way</a> );
+<a name="l00159"></a>00159     
+<a name="l00170"></a>00170     QList&lt;OSMWay&gt; <a class="code" href="classOSMMap.html#7ad372ac9fee89d8b8509881cdb80e6a">ways</a>();
+<a name="l00171"></a>00171     
+<a name="l00182"></a>00182     OSMWay <a class="code" href="classOSMMap.html#82a2c04e3d45cdd75d18dfd027be2d8a">way</a>( <span class="keywordtype">int</span> <span class="keywordtype">id</span> );
+<a name="l00183"></a>00183     
+<a name="l00198"></a>00198     OSMWay* <a class="code" href="classOSMMap.html#448831932540c67078073230c11b518d">getWayPtrById</a>( <span class="keywordtype">int</span> <span class="keywordtype">id</span> );
+<a name="l00199"></a>00199     
+<a name="l00205"></a>00205     <span class="keywordtype">void</span> <a class="code" href="classOSMMap.html#bd0f88ce7e1338d3dc466b8f26a98427">addRelation</a>( <a class="code" href="classOSMRelation.html">OSMRelation</a> <a class="code" href="classOSMMap.html#c01ae2de30cbe0d2060ea4d2156979cc">relation</a> );
+<a name="l00206"></a>00206     
+<a name="l00217"></a>00217     QList&lt;OSMRelation&gt; <a class="code" href="classOSMMap.html#67f8112703188cfe411deb2988aa390b">relations</a>();
+<a name="l00218"></a>00218     
+<a name="l00229"></a>00229     <a class="code" href="classOSMRelation.html">OSMRelation</a> <a class="code" href="classOSMMap.html#c01ae2de30cbe0d2060ea4d2156979cc">relation</a>( <span class="keywordtype">int</span> <span class="keywordtype">id</span> );
+<a name="l00230"></a>00230     
+<a name="l00245"></a>00245     <a class="code" href="classOSMRelation.html">OSMRelation</a>* <a class="code" href="classOSMMap.html#b8bb97e545801b5d3ce9e26d3c6cf7ab">getRelationPtrById</a>( <span class="keywordtype">int</span> <span class="keywordtype">id</span> );
+<a name="l00246"></a>00246     
+<a name="l00252"></a>00252     <span class="keywordtype">void</span> <a class="code" href="classOSMMap.html#c688257bd2150f4ab03b65d096cda94b">paint</a>( QPainter* painter );
+<a name="l00253"></a>00253     
+<a name="l00259"></a>00259     <span class="keywordtype">void</span> <a class="code" href="classOSMMap.html#845cab03d9874a321a85b1d0998f861c">zoomIn</a>( <span class="keywordtype">int</span> steps = 1 );
+<a name="l00260"></a>00260     
+<a name="l00266"></a>00266     <span class="keywordtype">void</span> <a class="code" href="classOSMMap.html#9ae40280005bc7f4edaf1c6b7eba1053">zoomOut</a>( <span class="keywordtype">int</span> steps = 1 );
+<a name="l00267"></a>00267 
+<a name="l00273"></a>00273     <span class="keywordtype">void</span> <a class="code" href="classOSMMap.html#48e8e483c51e811e23ac71ed34cdea87">zoom</a>( <span class="keywordtype">int</span> level );
+<a name="l00274"></a>00274     
+<a name="l00275"></a>00275   <span class="keyword">private</span>:
+<a name="l00276"></a>00276     <span class="keywordtype">int</span> zoomMultiplier();
+<a name="l00277"></a>00277     
+<a name="l00278"></a>00278     QList&lt;OSMNode&gt; m_nodes;
+<a name="l00279"></a>00279     QList&lt;OSMWay&gt; m_ways;
+<a name="l00280"></a>00280     QList&lt;OSMRelation&gt; m_relations;
+<a name="l00281"></a>00281     
+<a name="l00282"></a>00282     <span class="keywordtype">double</span> m_minlat;
+<a name="l00283"></a>00283     <span class="keywordtype">double</span> m_maxlat;
+<a name="l00284"></a>00284     <span class="keywordtype">double</span> m_minlon;
+<a name="l00285"></a>00285     <span class="keywordtype">double</span> m_maxlon;
+<a name="l00286"></a>00286     <span class="keywordtype">double</span> m_minx;
+<a name="l00287"></a>00287     <span class="keywordtype">double</span> m_maxx;
+<a name="l00288"></a>00288     <span class="keywordtype">double</span> m_miny;
+<a name="l00289"></a>00289     <span class="keywordtype">double</span> m_maxy;
+<a name="l00290"></a>00290     
+<a name="l00291"></a>00291     <span class="keywordtype">int</span> m_zoomlevel;
+<a name="l00292"></a>00292 };
+<a name="l00293"></a>00293 
+<a name="l00294"></a>00294 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 15 02:09:53 2009 for SatNav by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jul 20 16:19:22 2009 for SatNav by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

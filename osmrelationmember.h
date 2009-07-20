@@ -13,6 +13,9 @@ OSMRelation and OSMMap are needed to get a pointer to the OSMNode or OSMWay obje
 class OSMRelationMember
 {
   public:
+    /**
+    Used to specify the type of a relation member
+    */
     enum Type
     {
       Node,

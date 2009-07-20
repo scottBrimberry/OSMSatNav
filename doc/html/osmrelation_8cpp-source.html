@@ -60,7 +60,7 @@
 <a name="l00040"></a>00040 
 <a name="l00041"></a><a class="code" href="classOSMRelation.html#f919908f1388221bbdea98821128d240">00041</a> <span class="keywordtype">void</span> <a class="code" href="classOSMRelation.html#78d721116f69f9955d236cf1a36c8c39">OSMRelation::addMember</a>( QXmlStreamReader &amp;xml )
 <a name="l00042"></a>00042 {
-<a name="l00043"></a>00043   OSMRelationMember::Type type;
+<a name="l00043"></a>00043   <a class="code" href="classOSMRelationMember.html#857f8bfb535372fe9b92195fe88fa5ae">OSMRelationMember::Type</a> type;
 <a name="l00044"></a>00044   <span class="keywordflow">if</span>( xml.attributes().value( <span class="stringliteral">"type"</span> ) == <span class="stringliteral">"way"</span> )
 <a name="l00045"></a>00045     type = OSMRelationMember::Way;
 <a name="l00046"></a>00046   <span class="keywordflow">else</span>
@@ -74,12 +74,12 @@
 <a name="l00054"></a>00054   <span class="keywordflow">return</span> m_members; 
 <a name="l00055"></a>00055 }
 <a name="l00056"></a>00056 
-<a name="l00057"></a><a class="code" href="classOSMRelation.html#4a3e89ec7be81fe545c8870158ed7943">00057</a> OSMRelationMember::Type <a class="code" href="classOSMRelation.html#4a3e89ec7be81fe545c8870158ed7943">OSMRelation::getMemberType</a>( <a class="code" href="classOSMRelationMember.html">OSMRelationMember</a> member ) 
+<a name="l00057"></a><a class="code" href="classOSMRelation.html#4a3e89ec7be81fe545c8870158ed7943">00057</a> <a class="code" href="classOSMRelationMember.html#857f8bfb535372fe9b92195fe88fa5ae">OSMRelationMember::Type</a> <a class="code" href="classOSMRelation.html#4a3e89ec7be81fe545c8870158ed7943">OSMRelation::getMemberType</a>( <a class="code" href="classOSMRelationMember.html">OSMRelationMember</a> member ) 
 <a name="l00058"></a>00058 { 
 <a name="l00059"></a>00059   <span class="keywordflow">return</span> member.<a class="code" href="classOSMRelationMember.html#e085ccf966ca2d84897ea82478ade8c7">type</a>(); 
 <a name="l00060"></a>00060 }
 <a name="l00061"></a>00061 
-<a name="l00062"></a><a class="code" href="classOSMRelation.html#7d3a8c5bfb2290834e99505bb43df71e">00062</a> OSMRelationMember::Type <a class="code" href="classOSMRelation.html#4a3e89ec7be81fe545c8870158ed7943">OSMRelation::getMemberType</a>( <span class="keywordtype">int</span> i ) 
+<a name="l00062"></a><a class="code" href="classOSMRelation.html#7d3a8c5bfb2290834e99505bb43df71e">00062</a> <a class="code" href="classOSMRelationMember.html#857f8bfb535372fe9b92195fe88fa5ae">OSMRelationMember::Type</a> <a class="code" href="classOSMRelation.html#4a3e89ec7be81fe545c8870158ed7943">OSMRelation::getMemberType</a>( <span class="keywordtype">int</span> i ) 
 <a name="l00063"></a>00063 {
 <a name="l00064"></a>00064   <span class="keywordflow">return</span> <a class="code" href="classOSMRelation.html#4a3e89ec7be81fe545c8870158ed7943">getMemberType</a>( m_members.at( i ) ); 
 <a name="l00065"></a>00065 }
@@ -140,7 +140,7 @@
 <a name="l00120"></a>00120   <span class="keywordflow">return</span> m_related; 
 <a name="l00121"></a>00121 }
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 15 02:09:53 2009 for SatNav by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jul 20 16:19:22 2009 for SatNav by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -16,13 +16,12 @@ class Mercator
     //Mercator
     //static const double PI = 3.141592;
     //Plate carree
-    static const double LAT1 = 52; //Standard parallels
+    //static const double LAT1 = 52; //Standard parallels
     
     /**
     Converts longitude to an x coordinate
     
     @param lon The longitude of the point to be converted
-    @param centre The centre of the map being drawn (in degrees)
     
     @return The x coordinate for use in drawing a map
     */
@@ -39,8 +38,7 @@ class Mercator
     /**
     Converts an x coordinate to longditude
     
-    @param lon The x coordinate of the point to be converted
-    @param centre The centre of the map being drawn (in degrees)
+    @param x The x coordinate of the point to be converted
     
     @return The longitude of the point drawn on the map
     */
@@ -57,7 +55,7 @@ class Mercator
     /**
     Converts latitude to a y coordinate
     
-    @param lon The latitude of the point to be converted
+    @param lat The latitude of the point to be converted
     
     @return The y coordinate for use in drawing a map
     */
@@ -74,7 +72,7 @@ class Mercator
     /**
     Converts a y coordinate to latditude
     
-    @param lon The y coordinate of the point to be converted
+    @param y The y coordinate of the point to be converted
     
     @return The latitude of the point drawn on the map
     */

@@ -76,25 +76,24 @@
 <a name="l00056"></a>00056   <span class="keywordflow">return</span> m_related; 
 <a name="l00057"></a>00057 }
 <a name="l00058"></a>00058 
-<a name="l00059"></a>00059 <span class="keywordtype">void</span> OSMWay::paint( QPainter* painter, <span class="keywordtype">double</span> minlat, <span class="keywordtype">double</span> minlon )
-<a name="l00060"></a>00060 {
+<a name="l00059"></a>00059 <span class="keywordtype">void</span> OSMWay::paint( QPainter* painter, <span class="keywordtype">double</span> minx, <span class="keywordtype">double</span> miny, <span class="keywordtype">int</span> zoomMultiplier )
+<a name="l00060"></a>00060 {  
 <a name="l00061"></a>00061   QPolygon polygon;
 <a name="l00062"></a>00062   <span class="keywordflow">foreach</span>( <a class="code" href="classOSMNode.html">OSMNode</a>* i, nodes() )
 <a name="l00063"></a>00063   {
 <a name="l00064"></a>00064     <span class="comment">//TODO: The *2000 (or whatever it is now) is for zoom purposes, it needs to be part of some sort of</span>
 <a name="l00065"></a>00065     <span class="comment">//zoom feature/variable</span>
-<a name="l00066"></a>00066     polygon.append( QPoint( (i-&gt;<a class="code" href="classOSMNode.html#ccd706ba1fbd22ff4a8f2044d0e80f72">lon</a>() - minlon) * 40000, painter-&gt;device()-&gt;height() - (i-&gt;<a class="code" href="classOSMNode.html#8395b18c89c105f41bc7f0a0a6e89d41">lat</a>() - minlat) * 40000 ) );
+<a name="l00066"></a>00066     polygon.append( QPoint( (i-&gt;<a class="code" href="classOSMNode.html#1573c72fea91f10b9761b01ae18387f6">x</a>() - minx) * zoomMultiplier, painter-&gt;device()-&gt;height() - (i-&gt;<a class="code" href="classOSMNode.html#993b2cce99ce26a508a9e82ee9ff650b">y</a>() - miny) * zoomMultiplier ) );
 <a name="l00067"></a>00067   }
 <a name="l00068"></a>00068   
-<a name="l00069"></a>00069   qDebug() &lt;&lt; <span class="stringliteral">"draw ["</span> &lt;&lt; polygon[0].x() &lt;&lt; <span class="stringliteral">","</span> &lt;&lt; polygon[0].y() &lt;&lt; <span class="stringliteral">"]"</span>;
+<a name="l00069"></a>00069   QString value;
 <a name="l00070"></a>00070   
-<a name="l00071"></a>00071   <span class="keywordflow">if</span>( i.get
-<a name="l00072"></a>00072   <span class="keywordflow">else</span>
-<a name="l00073"></a>00073     painter-&gt;setPen( QPen( QBrush( Qt::black ), 2 ) );
-<a name="l00074"></a>00074   painter-&gt;drawPolyline( polygon );
-<a name="l00075"></a>00075 }
+<a name="l00071"></a>00071   painter-&gt;setPen( QPen( QBrush( QColor( 0, 0, 0, 50 ) ), 1 ) );
+<a name="l00072"></a>00072   
+<a name="l00073"></a>00073   painter-&gt;drawPolyline( polygon );
+<a name="l00074"></a>00074 }
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 15 02:09:53 2009 for SatNav by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jul 20 16:19:22 2009 for SatNav by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
