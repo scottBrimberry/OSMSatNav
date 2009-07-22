@@ -21,21 +21,8 @@ OSMRelation::OSMRelation( OSMMap* parent, int id, bool visible )
 void OSMRelation::addMember( OSMRelationMember member )
 { 
   m_members.append( member );
-  /*
-  if( member.type() == OSMRelationMember::Node )
-  {
-    if( getMemberNode( member ) )
-    {
-      getMemberNode( member )->setRelated( true );
-    }
-  }
-  else if( member.type() == OSMRelationMember::Way )
-  {
-    if( getMemberWay( member ) ) 
-    {
-      getMemberWay( member )->setRelated( true );
-    }
-  }*/
+  //TODO: Work out best way of marking nodes as part of relation (rather than way)
+
 }
 
 void OSMRelation::addMember( QXmlStreamReader &xml )

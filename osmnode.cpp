@@ -2,8 +2,11 @@
 
 #include "mercator.h"
 
+#include <QDebug>
+
 OSMNode::OSMNode() 
 {
+  m_related = false;
 }
 
 OSMNode::OSMNode( int id, double lat, double lon, bool visible )
@@ -43,6 +46,11 @@ void OSMNode::setRelated( bool related )
   m_related = related; 
 }
 
+void OSMNode::setJunction( bool junction )
+{
+  m_junction = junction;
+}
+
 int OSMNode::id() 
 {
   return m_id; 
@@ -76,4 +84,9 @@ bool OSMNode::visible()
 bool OSMNode::related() 
 {
   return m_related;
+}
+
+bool OSMNode::junction()
+{
+  return m_junction;
 }

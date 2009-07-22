@@ -18,19 +18,19 @@ int main() {
     // Think of this as a numeric table showing relationships.
 
     int L[LEVELS][LEVELS] = {
-              // A  B  C  D  E  F  G  H  I  J  K
-          /*A*/ {-1, 9, 4,13,-1,-1,-1,-1,-1,-1,-1},
-          /*B*/ { 9,-1,-1, 2,-1,-1,-1,-1,-1,-1,-1},
-          /*C*/ { 4,-1,-1,-1,-1, 5,-1,-1,-1,-1,-1},
-          /*D*/ {13, 2,-1,-1, 6, 7,-1,-1,-1,-1,-1},
-          /*E*/ {-1,-1,-1, 6,-1,-1, 9,10,-1,-1,-1},
-          /*F*/ {-1,-1, 5, 7,-1,-1, 3,-1,11,-1,-1},
-          /*G*/ {-1,-1,-1,-1, 9, 3,-1,-1,-1, 1, 7},
-          /*H*/ {-1,-1,-1,-1,10,-1,-1,-1,-1,-1, 6},
-          /*I*/ {-1,-1,-1,-1,-1,11,-1,-1,-1, 2,-1},
-          /*J*/ {-1,-1,-1,-1,-1,-1, 1,-1, 2,-1, 4},
-          /*K*/ {-1,-1,-1,-1,-1,-1, 7, 6,-1, 4,-1}
-            };
+        // A  B  C  D  E  F  G  H  I  J  K
+        /*A*/ {-1, 9, 4,13,-1,-1,-1,-1,-1,-1,-1},
+        /*B*/ { 9,-1,-1, 2,-1,-1,-1,-1,-1,-1,-1},
+        /*C*/ { 4,-1,-1,-1,-1, 5,-1,-1,-1,-1,-1},
+        /*D*/ {13, 2,-1,-1, 6, 7,-1,-1,-1,-1,-1},
+        /*E*/ {-1,-1,-1, 6,-1,-1, 9,10,-1,-1,-1},
+        /*F*/ {-1,-1, 5, 7,-1,-1, 3,-1,11,-1,-1},
+        /*G*/ {-1,-1,-1,-1, 9, 3,-1,-1,-1, 1, 7},
+        /*H*/ {-1,-1,-1,-1,10,-1,-1,-1,-1,-1, 6},
+        /*I*/ {-1,-1,-1,-1,-1,11,-1,-1,-1, 2,-1},
+        /*J*/ {-1,-1,-1,-1,-1,-1, 1,-1, 2,-1, 4},
+        /*K*/ {-1,-1,-1,-1,-1,-1, 7, 6,-1, 4,-1}
+    };
 
     // An array to hold vertexes and full path distances
     int Vertexes[LEVELS];
@@ -92,7 +92,9 @@ void Dijkstra(int *Vertexes, int *Dist, int L[LEVELS][LEVELS]) {
     // our current shortest distance. If so, set the new shortest distance
     // to minValue and label the node as the shortest
     for (int i = 0; i < LEVELS; i++) {
-        if (Vertexes[i] == -1) { continue; }
+        if (Vertexes[i] == -1) {
+            continue;
+        }
         if (Dist[i] > 0 && Dist[i] < minValue) {
             minValue = Dist[i];
             minNode = i;
@@ -104,9 +106,11 @@ void Dijkstra(int *Vertexes, int *Dist, int L[LEVELS][LEVELS]) {
 
     // Add the distance to the overall path distance from start
     // to destination. The result is a list of values at the end which will
-    // show the shortest paths between any two nodes. 
+    // show the shortest paths between any two nodes.
     for (int i = 0; i < LEVELS; i++) {
-        if (L[minNode][i] < 0) { continue; }
+        if (L[minNode][i] < 0) {
+            continue;
+        }
         if (Dist[i] < 0) {
             Dist[i] = minValue + L[minNode][i];
             continue;

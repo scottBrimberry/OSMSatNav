@@ -17,7 +17,11 @@ OSMWay::OSMWay( int id, bool visible )
 
 void OSMWay::addNode( OSMNode* node ) 
 {
-  node->setRelated( true );
+  if( node->related() )
+    node->setJunction( true );
+  else
+    node->setRelated( true );
+  
   m_nodes.append( node ); 
 }
 

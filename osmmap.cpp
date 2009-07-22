@@ -27,7 +27,7 @@ double OSMMap::maxY() { return m_maxy; }
 
 void OSMMap::addNode( OSMNode node ) 
 { 
-  m_nodes.append( node ); 
+  m_nodes.append( node );
 }
 
 QList<OSMNode> OSMMap::nodes() 

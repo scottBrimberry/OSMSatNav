@@ -59,6 +59,12 @@ class OSMNode: public OSMTaggable
     @param related True if the node is related to a way or relation
     */
     void setRelated( bool related );
+    /**
+    Set whether the node forms a junction between two or more ways.
+    
+    @param junction True if the node forms a junction
+    */
+    void setJunction( bool junction );
     
     //Getters
     /**
@@ -103,6 +109,12 @@ class OSMNode: public OSMTaggable
     @return True if the node is related to a way or relation
     */
     bool related();
+    /**
+    Get whether the node forms a junction between two or more ways
+    
+    @return True if the node forms a junction
+    */
+    bool junction();
     
   private:
     //Taken straight from XML
@@ -114,6 +126,8 @@ class OSMNode: public OSMTaggable
     bool m_visible;
     //True if part of a relation (i.e. if false, then POI)
     bool m_related;
+    //True if the node is part of more than one way
+    bool m_junction;
 };
 
 #endif

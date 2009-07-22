@@ -6,20 +6,20 @@
 
 class OSMTag
 {
-  public:
+public:
     OSMTag();
     OSMTag( QString a, QString b );
     OSMTag( QXmlStreamReader &xml );
-    
+
     void setName( QString name );
     void setValue( QString value );
-    
+
     QString name();
     QString value();
-    
+
     OSMTag readTag( QXmlStreamReader &xml );
-    
-  private:
+
+private:
     QString m_name;
     QString m_value;
 };

@@ -15,6 +15,7 @@ set (osmdata_SRCS
   osmtag.cpp
   osmtaggable.cpp
   osmway.cpp
+  osmxml.cpp
 )
 
 set (satnav_SRCS

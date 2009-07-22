@@ -6,39 +6,39 @@ OSMTag::OSMTag()
 
 OSMTag::OSMTag( QString a, QString b )
 {
-  m_name = a;
-  m_value = b;
+    m_name = a;
+    m_value = b;
 }
 
 OSMTag::OSMTag( QXmlStreamReader &xml )
 {
-  readTag( xml );
+    readTag( xml );
 }
 
-void OSMTag::setName( QString name ) 
+void OSMTag::setName( QString name )
 {
-  m_name = name; 
+    m_name = name;
 }
 
-void OSMTag::setValue( QString value ) 
+void OSMTag::setValue( QString value )
 {
-  m_value = value; 
+    m_value = value;
 }
 
-QString OSMTag::name() 
+QString OSMTag::name()
 {
-  return m_name; 
+    return m_name;
 }
 
-QString OSMTag::value() 
+QString OSMTag::value()
 {
-  return m_value; 
+    return m_value;
 }
 
-OSMTag OSMTag::readTag( QXmlStreamReader &xml ) 
+OSMTag OSMTag::readTag( QXmlStreamReader &xml )
 {
-  m_name = xml.attributes().value( "k" ).toString();
-  m_value = xml.attributes().value( "v" ).toString();
-  
-  return *this;
+    m_name = xml.attributes().value( "k" ).toString();
+    m_value = xml.attributes().value( "v" ).toString();
+
+    return *this;
 }
