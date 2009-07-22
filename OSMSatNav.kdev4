@@ -1,0 +1,4 @@
+[Project]
+Name=OSMSatNav
+Manager=KDevCMakeManager
+VersionControl=kdevgit
