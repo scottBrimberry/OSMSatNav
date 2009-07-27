@@ -168,8 +168,10 @@ bool OSMXml::readFile( QString filename, OSMMap* map )
   return true;
 }
 
+/**
 bool OSMXml::writeFile( QString filename, OSMMap* map )
 {
   //TODO: Implement me
   return false;
 }
+*/

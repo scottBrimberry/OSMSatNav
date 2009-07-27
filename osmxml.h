@@ -30,7 +30,7 @@ class OSMXml
     
     @return True if successful, false otherwise
     */
-    static bool writeFile( QString filename, OSMMap* map );
+    //static bool writeFile( QString filename, OSMMap* map );
 };
 
 #endif
