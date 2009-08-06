@@ -9,6 +9,7 @@ set(QT_USE_QTSQL true)
 include(${QT_USE_FILE})
 
 set (osmdata_SRCS
+  database.cpp
   osmmap.cpp
   osmnode.cpp
   osmrelation.cpp
@@ -20,7 +21,7 @@ set (osmdata_SRCS
 )
 
 set (satnav_SRCS
-  #${osmdata_SRCS}
+  ${osmdata_SRCS}
   main.cpp
 )
 

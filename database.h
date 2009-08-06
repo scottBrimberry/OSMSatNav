@@ -1,12 +1,11 @@
 #include <QString>
 
-static class OSMDatabase
+class OSMMap;
+
+class OSMDatabase
 {
   public:
-    bool open( QString host, QString name, QString user, QString pass );
-    bool isOpen();
-    void writeMap( OSMMap* map );
-    
-  private:
-    bool m_open = false;
-}
+    static bool open( QString host, QString name, QString user, QString pass );
+    static bool isOpen();
+    static void writeMap( OSMMap* map );
+};
